@@ -10,7 +10,8 @@
       "Bash(mkdir -p \"/d/reddit/社区以及社区规则分类\")",
       "Bash(git add -A)",
       "Bash(git commit:*)",
-      "Bash(git push)"
+      "Bash(git push)",
+      "Bash(mkdir -p \"/d/reddit/点赞量高的帖子收藏\")"
     ]
   }
 }

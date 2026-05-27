@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reddit 从零开始 Karma 每日执行 Todolist</title>
+  <style>
+    :root { color-scheme: light; --ink: #18212f; --muted: #5f6b7a; --line: #d9e0e8; --soft: #f6f8fb; --accent: #1f6feb; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif; color: var(--ink); background: #ffffff; line-height: 1.65; }
+    main { max-width: 980px; margin: 0 auto; padding: 40px 24px 72px; }
+    h1 { font-size: 32px; line-height: 1.25; margin: 0 0 22px; }
+    h2 { font-size: 24px; margin: 36px 0 14px; padding-top: 12px; border-top: 1px solid var(--line); }
+    h3 { font-size: 18px; margin: 28px 0 10px; }
+    p { margin: 10px 0 16px; }
+    ul, ol { margin: 8px 0 18px; padding-left: 24px; }
+    li { margin: 7px 0; }
+    li.task { list-style: none; margin-left: -24px; }
+    label { cursor: pointer; display: inline-flex; gap: 8px; align-items: flex-start; }
+    input[type="checkbox"] { width: 18px; height: 18px; margin-top: 4px; accent-color: var(--accent); flex: 0 0 auto; }
+    code { background: var(--soft); border: 1px solid var(--line); border-radius: 4px; padding: 1px 5px; font-family: Consolas, "SFMono-Regular", monospace; font-size: 0.92em; }
+    .table-wrap { overflow-x: auto; margin: 18px 0 28px; border: 1px solid var(--line); border-radius: 8px; }
+    table { width: 100%; border-collapse: collapse; min-width: 760px; }
+    th, td { padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { background: var(--soft); font-weight: 700; }
+    tr:last-child td { border-bottom: 0; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    @media print { main { max-width: none; padding: 20px; } input[type="checkbox"] { accent-color: #000; } }
+  </style>
+</head>
+<body>
+  <main>
+<h1 id="reddit-从零开始-karma-每日执行-todolist">Reddit 从零开始 Karma 每日执行 Todolist</h1>
+<p>原则：只做真实互动。不要互赞、求赞、买赞、复制评论、用多个账号互相投票，也不要为了攒 karma 去无差别点赞或灌水。</p>
+<h2 id="每日固定动作">每日固定动作</h2>
+<ul>
+<li class="task"><label><input type="checkbox"> <span>登录 Reddit，检查账号是否正常、邮箱是否验证</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>浏览 <code>r/NewToReddit</code> 或 <code>r/LearnToReddit</code> 5-10 分钟，熟悉规则和格式</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>只给自己真实认可的帖子/评论 upvote，控制在 10-30 个以内</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>评论前先看社区规则、置顶帖、当前帖子的氛围</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>不发外链、不推广产品、不提品牌、不求 upvote</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>记录当天高互动评论/被删评论/被踩原因</span></label></li>
+</ul>
+<h2 id="第-1-天-建立正常账号轨迹">第 1 天：建立正常账号轨迹</h2>
+<p>目标：让账号看起来像真实新用户，不急着冲量。</p>
+<ul>
+<li class="task"><label><input type="checkbox"> <span>逛社区：<code>r/LearnToReddit</code></span></label></li>
+<li class="task"><label><input type="checkbox"> <span>逛社区：<code>r/NewToReddit</code></span></label></li>
+<li class="task"><label><input type="checkbox"> <span>逛社区：<code>r/findareddit</code></span></label></li>
+<li class="task"><label><input type="checkbox"> <span>正常 upvote：10-15 个真心觉得有帮助的帖子或评论</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>评论：3-5 条</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>发帖：0-1 条，仅在 <code>r/LearnToReddit</code> 练习格式</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>重点：不要发推广、不要跨社区复制同一句话</span></label></li>
+</ul>
+<h2 id="第-2-天-开始低风险评论">第 2 天：开始低风险评论</h2>
+<p>目标：用友好、简短、真实的评论拿第一批 comment karma。</p>
+<ul>
+<li class="task"><label><input type="checkbox"> <span>逛社区：<code>r/CasualConversation</code></span></label></li>
+<li class="task"><label><input type="checkbox"> <span>逛社区：<code>r/findareddit</code></span></label></li>
+<li class="task"><label><input type="checkbox"> <span>逛社区：<code>r/NoStupidQuestions</code></span></label></li>
+<li class="task"><label><input type="checkbox"> <span>正常 upvote：15-25 个</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>评论：5-8 条</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>发帖：0 条</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>评论模板：先直接回答，再补一句个人经验或例子</span></label></li>
+</ul>
+<h2 id="第-3-天-主攻问答型社区">第 3 天：主攻问答型社区</h2>
+<p>目标：抢早期新帖，提高评论被看到的概率。</p>
+<ul>
+<li class="task"><label><input type="checkbox"> <span>刷 <code>r/AskReddit</code> 的 <code>new</code></span></label></li>
+<li class="task"><label><input type="checkbox"> <span>刷 <code>r/NoStupidQuestions</code> 的 <code>new</code></span></label></li>
+<li class="task"><label><input type="checkbox"> <span>刷 <code>r/ExplainTheJoke</code> 的 <code>new</code></span></label></li>
+<li class="task"><label><input type="checkbox"> <span>正常 upvote：20-30 个</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>评论：8-12 条</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>发帖：0 条</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>重点：只回自己能真实回答的问题，不写 AI 式长段落</span></label></li>
+</ul>
+<h2 id="第-4-天-继续评论-开始测试轻内容">第 4 天：继续评论，开始测试轻内容</h2>
+<p>目标：保持稳定互动，尝试 1 个低风险帖子。</p>
+<ul>
+<li class="task"><label><input type="checkbox"> <span>逛社区：<code>r/AskReddit</code></span></label></li>
+<li class="task"><label><input type="checkbox"> <span>逛社区：<code>r/NoStupidQuestions</code></span></label></li>
+<li class="task"><label><input type="checkbox"> <span>逛社区：<code>r/CasualConversation</code></span></label></li>
+<li class="task"><label><input type="checkbox"> <span>正常 upvote：20-30 个</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>评论：8-12 条</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>发帖：0-1 条，优先 <code>r/CasualConversation</code></span></label></li>
+<li class="task"><label><input type="checkbox"> <span>重点：发帖不要带链接，不要问敏感、政治、医疗、法律问题</span></label></li>
+</ul>
+<h2 id="第-5-天-加入兴趣型社区">第 5 天：加入兴趣型社区</h2>
+<p>目标：用具体兴趣提高评论质量。</p>
+<ul>
+<li class="task"><label><input type="checkbox"> <span>逛社区：<code>r/gaming</code></span></label></li>
+<li class="task"><label><input type="checkbox"> <span>逛社区：<code>r/food</code></span></label></li>
+<li class="task"><label><input type="checkbox"> <span>逛社区：<code>r/Cats</code></span></label></li>
+<li class="task"><label><input type="checkbox"> <span>正常 upvote：20-30 个</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>评论：8-12 条</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>发帖：0-1 条，有原创图片再发 <code>r/Cats</code> 或 <code>r/food</code></span></label></li>
+<li class="task"><label><input type="checkbox"> <span>重点：图片必须原创，标题必须符合社区格式</span></label></li>
+</ul>
+<h2 id="第-6-天-尝试高互动社区">第 6 天：尝试高互动社区</h2>
+<p>目标：在大流量社区里找早期切入点。</p>
+<ul>
+<li class="task"><label><input type="checkbox"> <span>刷 <code>r/AskReddit</code> 的 <code>new</code> 和 <code>rising</code></span></label></li>
+<li class="task"><label><input type="checkbox"> <span>刷 <code>r/AITAH</code> 的 <code>new</code></span></label></li>
+<li class="task"><label><input type="checkbox"> <span>刷 <code>r/ExplainTheJoke</code> 的 <code>new</code></span></label></li>
+<li class="task"><label><input type="checkbox"> <span>正常 upvote：20-30 个</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>评论：10-15 条</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>发帖：0 条</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>重点：<code>r/AITAH</code> 不要用 AI 口吻，不要编故事，不要攻击用户</span></label></li>
+</ul>
+<h2 id="第-7-天-复盘并筛选有效社区">第 7 天：复盘并筛选有效社区</h2>
+<p>目标：找出最适合自己的 3 个社区。</p>
+<ul>
+<li class="task"><label><input type="checkbox"> <span>统计过去 6 天哪类评论最容易被 upvote</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>统计哪些社区评论容易被看到</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>统计是否有被删帖/删评情况</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>正常 upvote：15-25 个</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>评论：5-10 条</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>发帖：0-1 条，只发最有把握的原创内容</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>选出后续主攻社区 3 个</span></label></li>
+</ul>
+<h2 id="第-8-14-天-稳定积累周期">第 8-14 天：稳定积累周期</h2>
+<p>目标：形成可持续节奏，不触发 spam 风险。</p>
+<p>每天执行：</p>
+<ul>
+<li class="task"><label><input type="checkbox"> <span>主刷社区 1：<code>r/AskReddit</code> 或 <code>r/NoStupidQuestions</code></span></label></li>
+<li class="task"><label><input type="checkbox"> <span>主刷社区 2：<code>r/ExplainTheJoke</code> 或 <code>r/Advice</code></span></label></li>
+<li class="task"><label><input type="checkbox"> <span>兴趣社区 1：<code>r/Cats</code>、<code>r/food</code>、<code>r/gaming</code> 中选择一个</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>正常 upvote：20-40 个</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>评论：10-15 条</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>发帖：0-1 条，不要每天硬发</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>每条评论控制在 1-4 句话，优先真实、具体、自然</span></label></li>
+</ul>
+<h2 id="第-15-30-天-扩大社区池">第 15-30 天：扩大社区池</h2>
+<p>目标：从“能评论”过渡到“能发帖”。</p>
+<p>每天执行：</p>
+<ul>
+<li class="task"><label><input type="checkbox"> <span>继续主刷 2-3 个表现最好的社区</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>新增探索 1 个相关兴趣社区</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>正常 upvote：20-50 个</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>评论：8-15 条</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>发帖：每 2-3 天 1 条高质量内容</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>每周复盘一次：保留有效社区，淘汰低回报或规则太严的社区</span></label></li>
+</ul>
+<h2 id="评论质量检查">评论质量检查</h2>
+<p>发评论前勾选：</p>
+<ul>
+<li class="task"><label><input type="checkbox"> <span>这条评论是否真的回答了 OP？</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>是否有个人经验、具体例子或清晰解释？</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>是否像真人随手写的，而不是模板？</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>是否避免了攻击、讽刺、歧视、吵架？</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>是否没有外链、广告、求赞、引流？</span></label></li>
+</ul>
+<h2 id="发帖质量检查">发帖质量检查</h2>
+<p>发帖前勾选：</p>
+<ul>
+<li class="task"><label><input type="checkbox"> <span>已读目标社区规则</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>标题格式符合社区要求</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>内容是原创或有可靠来源</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>没有 AI 痕迹、推广意图、重复内容</span></label></li>
+<li class="task"><label><input type="checkbox"> <span>没有触碰政治、医疗、法律、NSFW、隐私等高风险话题</span></label></li>
+</ul>
+<h2 id="每日记录">每日记录</h2>
+<div class="table-wrap"><table>
+<thead><tr><th style="text-align:left">日期</th><th style="text-align:left">主刷社区</th><th style="text-align:left">upvote 数</th><th style="text-align:left">评论数</th><th style="text-align:left">发帖数</th><th style="text-align:left">新增 karma</th><th style="text-align:left">被删/被踩原因</th><th style="text-align:left">明天调整</th></tr></thead>
+<tbody>
+<tr><td style="text-align:left">2026-05-27</td><td style="text-align:left"></td><td style="text-align:left"></td><td style="text-align:left"></td><td style="text-align:left"></td><td style="text-align:left"></td><td style="text-align:left"></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">2026-05-28</td><td style="text-align:left"></td><td style="text-align:left"></td><td style="text-align:left"></td><td style="text-align:left"></td><td style="text-align:left"></td><td style="text-align:left"></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">2026-05-29</td><td style="text-align:left"></td><td style="text-align:left"></td><td style="text-align:left"></td><td style="text-align:left"></td><td style="text-align:left"></td><td style="text-align:left"></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">2026-05-30</td><td style="text-align:left"></td><td style="text-align:left"></td><td style="text-align:left"></td><td style="text-align:left"></td><td style="text-align:left"></td><td style="text-align:left"></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">2026-05-31</td><td style="text-align:left"></td><td style="text-align:left"></td><td style="text-align:left"></td><td style="text-align:left"></td><td style="text-align:left"></td><td style="text-align:left"></td><td style="text-align:left"></td></tr>
+</tbody></table></div>
+  </main>
+</body>
+</html>

@@ -3,7 +3,14 @@
     "allow": [
       "Bash(git remote add origin https://github.com/sisizi/reddit-.git)",
       "Bash(git branch -M main)",
-      "Bash(git push -u origin main)"
+      "Bash(git push -u origin main)",
+      "WebSearch",
+      "WebFetch(domain:www.reddit.com)",
+      "WebFetch(domain:www.redditinc.com)",
+      "Bash(mkdir -p \"/d/reddit/社区以及社区规则分类\")",
+      "Bash(git add -A)",
+      "Bash(git commit:*)",
+      "Bash(git push)"
     ]
   }
 }
